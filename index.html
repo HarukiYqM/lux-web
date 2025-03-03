@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Holo-Relighting: Controllable Volumetric Portrait Relighting from a Single Image</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mengweiren/research/relightful-harmonization"/>
+    <meta property="og:title" content="Holo-Relighting" />
+    <meta property="og:description" content="Project page for Holo-Relighting." />
+    <meta name="author" content="Yiqun Mei">
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="static/css/app.css">
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                Lux Post Facto: Learning Portrait Performance Relighting with Conditional Video Diffusion and a Hybrid Dataset            
+            </br> 
+                <small style="font-size: 18px; color: darkred;">
+                    <a href="static/pdfs/lux_post_facto.pdf" style="color: inherit; ">CVPR 2025</a> 
+                </small>              
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://yiqunmei.net">
+                          Yiqun Mei <sup>1,2</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mingminghe.com/">
+                          Mingming He <sup>1</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://limacv.github.io/homepage/">
+                        Li Ma <sup>1</sup>
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="https://julienphilip.com/">
+                            Julien Philip
+                             <sup>1</sup>
+                        </a>
+                    </li>
+                  <li>
+                    <a href="https://www.cs.cornell.edu/~wenqixian/">
+                        Wenqi Xian<sup>1</sup>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/david-george-90703-ca">
+                        David M George <sup>1</sup>
+                    </a>
+                </li>
+                <br>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=LQ_WYwIAAAAJ&hl=en">
+                            Xueming Yu <sup>1</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/gabrield">
+                            Gabriel Dedic  <sup>1</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://leventtasel.com/">
+                            Ahmet Levent Taşel  <sup>1</sup>
+                        </a>
+                        <!-- </br>New York University -->
+                    
+                    </li>
+                    <li>
+                        <a href="https://eyeline-research.github.io/Go-with-the-Flow/">
+                            Ning Yu  <sup>1</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://engineering.jhu.edu/faculty/vishal-patel/">
+                            Vishal M. Patel  <sup>2</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.pauldebevec.com/">
+                            Paul Debevec  <sup>1</sup>
+                        </a>
+                    </li>
+                    <br>
+                    <li>
+                        <sup>1</sup> Netflix Eyeline Studios
+                        </a>
+                    </li>
+                    <li>
+                    <sup>2</sup> Johns Hopkins University
+                        </a>
+                    </li>
+                </ul>
+                  
+            </div>
+        </div>
+
+       
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                            <p style="text-align:left;">
+            <image src="static/images/teaser.png" class="img-responsive" alt="scales">
+              <div>
+                <p class="text-justify">
+                    Lux Post Facto offers portrait relighting as a simple post-production process. Users can edit the lighting of portrait images (first
+row) and videos (second row) with high fidelity using any HDR map. Our method is temporally stable and highly photorealistic.
+                </p>
+              </div>
+           
+        </p>
+                </div> 
+        </div>
+
+        <br>
+
+<div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <style>
+              .responsive-video {
+                width: 100%;
+                height: auto;
+              }
+            </style>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/KSuRFUB4kOY" 
+                        frameborder="0" allow="autoplay" allowfullscreen></iframe>
+            </div>
+
+     
+          </div>
+          
+        </div>
+
+        <br> <!-- Add a line break here -->
+
+
+
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Video portrait relighting remains challenging because the results need to be both photorealistic and temporally stable. This typically requires a strong model design that can capture complex facial reflections as well as intensive training on a high-quality paired video dataset, such as dynamic one-light-at-a-time (OLAT). In this work, we introduce Lux Post Facto, a novel portrait video relighting method that produces both photorealistic and temporally consistent lighting effects. From the model side, we design a new conditional video diffusion model built upon state-of-the-art pre-trained video diffusion model, alongside a new lighting injection mechanism to enable precise control. This way we leverage strong spatial and temporal generative capability to generate plausible solutions to the ill-posed relighting problem. Our technique uses a hybrid dataset consisting of static expression OLAT data and in-the-wild portrait performance videos to jointly learn relighting and temporal modeling. This avoids the need to acquire paired video data in different lighting conditions. Our extensive experiments show that our model produces state-of-the-art results both in terms of photorealism and temporal consistency.
+                 </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Method
+                </h3>
+                <p style="text-align:center;">
+                  <image src="static/images/flow.png" class="img-responsive" alt="scales">
+              </p>
+                <p class="text-justify">
+                    To relight an input video, a delighting model predicts an albedo video (a) which is then relit by a relighting model (b). Both models share the same architecture (c) based on stable video diffusion [3] (SVD). We condition
+the SVD on the input video by concatenating input latents to the Gaussian noise. To support autoregressive prediction for long sequence,
+we replace the first T frames with previous predictions, indicated with a binary mask concatenated to the input. The output lighting is
+controlled by an HDR map, converted to a light embedding fed to the U-Net through cross-attention layers. The VAE that encodes and
+decodes the latents is omitted for clarity.
+                    </p>
+                
+            </div>
+        </div>
+
+        
+
+
+
+        <div class="row">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="fcol-xs-6 text-left ">
+                <!-- <div class="container is-max-desktop content"> -->
+                    <pre><code>@article{mei2025lux,
+  title={},
+  author={Mei, Yiqun and He, Mingming and Ma, Li and Philip, Julien  and Xian, Wenqi and George, David M and Yu, Xueming and Dedic, Gabriel and Taşel, Ahmet Levent and Yu, Ning and  Patel, Vishal M and Debevec, Paul},
+  journal={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2025}
+}</code></pre>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                The website template was borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+            </div>
+    </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
