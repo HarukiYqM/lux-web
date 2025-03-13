@@ -203,6 +203,15 @@ we replace the first T frames with previous predictions, indicated with a binary
 controlled by an HDR map, converted to a light embedding fed to the U-Net through cross-attention layers. The VAE that encodes and
 decodes the latents is omitted for clarity.
                     </p>
+                <p style="text-align:center;">
+                  <image src="static/images/hybrid.png" class="img-responsive" alt="scales">
+              </p>
+                <p class="text-justify">
+                    Lux Post Facto is trained using a hybrid dataset consisting of static OLAT images and in-the-wild talking head videos. The static OLATs provide
+relighting supervision for individual frames, and the in-the wild videos train the model to produce temporally stable
+performances under a wild variety of unknown lighting conditions. Our novel training strategy learns from this combination of datasets to achieve temporally consistent portrait
+video relighting.
+                    </p>
                 
             </div>
         </div>
